@@ -1,41 +1,205 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Project 2 - Hugging Face Model Analysis</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project 2 - Hugging Face Model Analysis</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI, sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    line-height:1.6;
+}
+
+header{
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    text-align:center;
+    padding:80px 20px;
+}
+
+header h1{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+header p{
+    font-size:1.2rem;
+    opacity:0.9;
+}
+
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+    padding:40px 0;
+}
+
+.card{
+    background:#1e293b;
+    padding:30px;
+    border-radius:15px;
+    margin-bottom:25px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.3);
+}
+
+.card h2{
+    color:#60a5fa;
+    margin-bottom:15px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.info-box{
+    background:#334155;
+    padding:20px;
+    border-radius:12px;
+}
+
+.info-box h3{
+    color:#93c5fd;
+    margin-bottom:10px;
+}
+
+ul{
+    padding-left:20px;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#94a3b8;
+}
+</style>
 </head>
-<body style="font-family:Arial;padding:40px;max-width:900px;margin:auto;">
 
-    <h1>Project 2 - Hugging Face Model Analysis</h1>
+<body>
 
-    <h2>Selected Model</h2>
-    <p>functiongemma-270m-it</p>
+<header>
+    <h1>Project 2: Hugging Face Model Analysis</h1>
+    <p>Analysis of a Trending AI Model from Hugging Face</p>
+</header>
 
-    <h2>Organization</h2>
-    <p>Google</p>
+<div class="container">
 
-    <h2>Model Type</h2>
-    <p>Large Language Model (LLM)</p>
+    <div class="card">
+        <h2>Project Objective</h2>
+        <p>
+            The objective of this project is to analyze a trending AI model
+            available on Hugging Face. The study includes model architecture,
+            dataset information, parameters, training methodology, and real-world
+            applications in Artificial Intelligence and Data Science.
+        </p>
+    </div>
 
-    <h2>Architecture</h2>
-    <p>Gemma Architecture</p>
+    <div class="card">
+        <h2>Selected Model</h2>
 
-    <h2>Parameters</h2>
-    <p>270 Million Parameters</p>
+        <div class="grid">
 
-    <h2>Dataset</h2>
-    <p>Large collection of text and code datasets curated by Google.</p>
+            <div class="info-box">
+                <h3>Model Name</h3>
+                <p>functiongemma-270m-it</p>
+            </div>
 
-    <h2>Applications</h2>
-    <ul>
-        <li>AI Assistants</li>
-        <li>Function Calling</li>
-        <li>Tool Integration</li>
-        <li>Chatbots</li>
-        <li>Automation Systems</li>
-    </ul>
+            <div class="info-box">
+                <h3>Organization</h3>
+                <p>Google</p>
+            </div>
 
-    <h2>Outcome</h2>
-    <p>Studied architecture, datasets, training methods and real-world applications of modern AI models.</p>
+            <div class="info-box">
+                <h3>Model Type</h3>
+                <p>Large Language Model (LLM)</p>
+            </div>
+
+            <div class="info-box">
+                <h3>Parameters</h3>
+                <p>270 Million</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Architecture</h2>
+
+        <p>
+            FunctionGemma is built on Google's Gemma architecture.
+            It is a transformer-based language model optimized for
+            instruction following, reasoning, and function-calling tasks.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Dataset Information</h2>
+
+        <p>
+            The model was trained on a large collection of publicly available
+            text and code datasets curated by Google. The training data includes:
+        </p>
+
+        <ul>
+            <li>Web documents</li>
+            <li>Programming code repositories</li>
+            <li>Technical documentation</li>
+            <li>Instruction tuning datasets</li>
+            <li>Question-answer datasets</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Training Parameters</h2>
+
+        <ul>
+            <li>Transformer Neural Network Architecture</li>
+            <li>Instruction Fine-Tuning</li>
+            <li>Large-Scale Distributed Training</li>
+            <li>Optimized for Function Calling</li>
+            <li>High Efficiency Inference</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Applications</h2>
+
+        <ul>
+            <li>AI Assistants</li>
+            <li>Data Science Workflows</li>
+            <li>Code Generation</li>
+            <li>Machine Learning Projects</li>
+            <li>Research Automation</li>
+            <li>Educational Platforms</li>
+            <li>Business Intelligence Solutions</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Conclusion</h2>
+
+        <p>
+            FunctionGemma demonstrates how modern Large Language Models can
+            perform intelligent reasoning, automation, and function execution.
+            Its efficient architecture makes it suitable for AI applications,
+            Data Science projects, and enterprise-level solutions.
+        </p>
+    </div>
+
+</div>
+
+<footer>
+    <p>AFE Project | REVA University | CSIT-A</p>
+</footer>
 
 </body>
 </html>
