@@ -45,10 +45,10 @@ Studied model architecture, datasets, parameters, training details, and applicat
 
 ---
 
-## Project 3 - Professional E-Profile Website
+## Project 3 - E-Profile Website
 
 ### Objective
-Develop and deploy a professional personal portfolio website.
+Develop and deploy a personal portfolio website.
 
 ### Technologies
 - HTML
@@ -79,7 +79,7 @@ Design and deploy a modern website related to Artificial Intelligence and Data S
 https://harshilnair.github.io/AFE-Projects_Harshil_R25EJ040/Project4-AIWebsite/
 
 ### Outcome
-Built a professional website highlighting AI concepts, applications, and future technologies.
+Built a website highlighting AI concepts, applications, and future technologies.
 
 ---
 
