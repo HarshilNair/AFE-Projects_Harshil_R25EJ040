@@ -1,243 +1,381 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI & Data Science Hub</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex News | Live Global Matrix</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Vue.js (State Engine) -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- FontAwesome Premium Icons Mapping -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Realistic Fluid Ambient Orbit Animation */
+        @keyframes orbit-1 {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(40px, -60px) scale(1.15); }
+            66% { transform: translate(-30px, 40px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        @keyframes orbit-2 {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(-50px, 50px) scale(0.85); }
+            66% { transform: translate(60px, -40px) scale(1.1); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        @keyframes orbit-3 {
+            0% { transform: translate(0px, 0px) scale(1); }
+            50% { transform: translate(50px, 40px) scale(1.2); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-}
+        .orb-1 { animation: orbit-1 18s ease-in-out infinite; }
+        .orb-2 { animation: orbit-2 22s ease-in-out infinite; }
+        .orb-3 { animation: orbit-3 20s ease-in-out infinite; }
 
-body{
-    background:#f4f6f9;
-    color:#333;
-}
+        /* Subtle tactile paper/grain overlay for a realistic high-end texture */
+        .grain-texture {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.025;
+            pointer-events: none;
+            z-index: 2;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
 
-header{
-    background:linear-gradient(135deg,#0f172a,#2563eb);
-    color:white;
-    text-align:center;
-    padding:80px 20px;
-}
+        /* Marquee Ticker Scroll */
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .ticker-scroll {
+            display: inline-block;
+            animation: marquee 30s linear infinite;
+        }
+        .ticker-scroll:hover {
+            animation-play-state: paused;
+        }
 
-header h1{
-    font-size:3rem;
-    margin-bottom:15px;
-}
-
-header p{
-    font-size:1.2rem;
-    max-width:800px;
-    margin:auto;
-}
-
-nav{
-    background:white;
-    text-align:center;
-    padding:15px;
-    box-shadow:0 2px 5px rgba(0,0,0,0.1);
-}
-
-nav a{
-    text-decoration:none;
-    color:#2563eb;
-    margin:0 20px;
-    font-weight:bold;
-}
-
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
-}
-
-section{
-    padding:60px 0;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:40px;
-    color:#2563eb;
-}
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-.card{
-    background:white;
-    padding:25px;
-    border-radius:12px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-5px);
-}
-
-.card h3{
-    color:#2563eb;
-    margin-bottom:10px;
-}
-
-.about{
-    background:white;
-    padding:30px;
-    border-radius:12px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
-}
-
-.tools{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:15px;
-}
-
-.tool{
-    background:#2563eb;
-    color:white;
-    padding:12px 20px;
-    border-radius:30px;
-}
-
-footer{
-    background:#0f172a;
-    color:white;
-    text-align:center;
-    padding:25px;
-    margin-top:40px;
-}
-</style>
+        /* High-End Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f8fafc;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0284c7;
+        }
+    </style>
 </head>
+<body class="bg-slate-50/50 text-slate-800 font-sans min-h-screen relative overflow-x-hidden">
 
-<body>
-
-<header>
-    <h1>AI & Data Science Hub</h1>
-    <p>
-        Exploring Artificial Intelligence, Machine Learning,
-        Data Analytics, and the technologies shaping the future.
-    </p>
-</header>
-
-<nav>
-    <a href="#about">About</a>
-    <a href="#domains">Domains</a>
-    <a href="#tools">Tools</a>
-    <a href="#future">Future</a>
-</nav>
-
-<section id="about">
-<div class="container">
-    <h2 class="section-title">About Artificial Intelligence</h2>
-
-    <div class="about">
-        <p>
-            Artificial Intelligence (AI) is a branch of computer science
-            focused on building systems capable of performing tasks that
-            typically require human intelligence. These systems can learn
-            from data, recognize patterns, make decisions, and continuously
-            improve their performance.
-        </p>
+    <!-- High-Fidelity Photorealistic Organic Background Layer -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <!-- Bright Liquid Energy Orbs with blend layers -->
+        <div class="absolute orb-1 top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-amber-200/40 mix-blend-multiply filter blur-[80px]"></div>
+        <div class="absolute orb-2 top-[30%] right-[-5%] w-[600px] h-[600px] rounded-full bg-rose-200/30 mix-blend-multiply filter blur-[90px]"></div>
+        <div class="absolute orb-3 bottom-[-10%] left-[15%] w-[550px] h-[550px] rounded-full bg-sky-200/40 mix-blend-multiply filter blur-[80px]"></div>
+        <div class="absolute orb-1 bottom-[20%] right-[20%] w-[450px] h-[450px] rounded-full bg-purple-200/20 mix-blend-multiply filter blur-[100px]"></div>
     </div>
-</div>
-</section>
+    
+    <!-- Realistic micro-grain tactile layer overlay -->
+    <div class="grain-texture"></div>
 
-<section id="domains">
-<div class="container">
+    <div id="app" class="relative z-10 flex flex-col min-h-screen">
+        
+        <!-- GLOBAL STOCK & LIVE MARKET MARQUEE TICKER -->
+        <div class="bg-slate-900/95 text-slate-100 py-1.5 overflow-hidden shadow-md text-xs font-mono backdrop-blur-md">
+            <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
+                <span class="bg-emerald-500 text-slate-950 font-black px-1.5 py-0.5 rounded text-[10px] uppercase shrink-0 mr-4 tracking-wider animate-pulse">
+                    <i class="fa-solid fa-chart-line mr-1"></i> Markets Live
+                </span>
+                <div class="w-full relative overflow-hidden h-4">
+                    <div class="ticker-scroll absolute whitespace-nowrap space-x-8 text-slate-300">
+                        <span>🚀 NASDAQ: +1.24% (18,421.50)</span>
+                        <span>📈 NIFTY 50: +0.85% (24,190.20)</span>
+                        <span>💥 CRUDE OIL: -1.42% ($74.15/bbl)</span>
+                        <span>⚡ BITCOIN: +3.60% ($71,450.00)</span>
+                        <span>📉 FTSE 100: -0.12% (8,210.40)</span>
+                        <span>💎 GOLD: +0.44% ($2,342.10/oz)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<h2 class="section-title">Key Domains</h2>
+        <!-- MAIN NAVIGATION HEADER WITH FROSTED GLASS EFFECT -->
+        <header class="border-b border-slate-200/60 bg-white/70 backdrop-blur-xl sticky top-0 z-50 shadow-xs">
+            <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col lg:flex-row justify-between items-center gap-4">
+                
+                <!-- Branding Elements -->
+                <div class="flex items-center gap-3 group cursor-pointer">
+                    <div class="bg-gradient-to-br from-amber-500 via-rose-500 to-sky-600 p-2.5 rounded-xl font-black text-white shadow-md transition-transform duration-500 group-hover:rotate-180">
+                        <i class="fa-solid fa-bolt-lightning text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-black tracking-tighter text-slate-900">APEX<span class="text-sky-600">NEWS</span></h1>
+                        <p class="text-[10px] text-slate-500 font-mono tracking-widest uppercase">Multi-Sector Intel Workspace</p>
+                    </div>
+                </div>
+                
+                <!-- Quick Metric Banner Blocks -->
+                <div class="hidden md:flex gap-4 items-center">
+                    <div class="bg-white/60 border border-slate-200/80 px-3 py-1.5 rounded-lg text-center font-mono backdrop-blur-xs">
+                        <span class="block text-[9px] uppercase text-slate-400 font-bold">Verification Rate</span>
+                        <span class="text-xs font-black text-emerald-600"><i class="fa-solid fa-shield-check mr-1"></i> 99.8% Secure</span>
+                    </div>
+                    <div class="bg-white/60 border border-slate-200/80 px-3 py-1.5 rounded-lg text-center font-mono backdrop-blur-xs">
+                        <span class="block text-[9px] uppercase text-slate-400 font-bold">Active Sources</span>
+                        <span class="text-xs font-black text-sky-600"><i class="fa-solid fa-server mr-1"></i> 1,420 Nodes</span>
+                    </div>
+                </div>
 
-<div class="cards">
+                <!-- Channel Controller Options -->
+                <nav class="flex gap-1 bg-slate-200/60 backdrop-blur-xs p-1 rounded-xl border border-slate-200/80 w-full lg:w-auto overflow-x-auto">
+                    <button @click="currentTab = 'all'" :class="currentTab === 'all' ? 'bg-white text-slate-900 font-bold shadow-xs' : 'text-slate-600 hover:text-slate-900'" class="px-4 py-2 rounded-lg text-xs font-semibold shrink-0 transition-all">
+                        <i class="fa-solid fa-grid-2 mr-1"></i> Master Grid Feed
+                    </button>
+                    <button @click="currentTab = 'analytics'" :class="currentTab === 'analytics' ? 'bg-white text-slate-900 font-bold shadow-xs' : 'text-slate-600 hover:text-slate-900'" class="px-4 py-2 rounded-lg text-xs font-semibold shrink-0 transition-all">
+                        <i class="fa-solid fa-chart-pie mr-1"></i> Velocity Analytics
+                    </button>
+                </nav>
+            </div>
+        </header>
 
-<div class="card">
-<h3>Machine Learning</h3>
-<p>
-Algorithms that learn from data and improve performance
-without explicit programming.
-</p>
-</div>
+        <!-- MAIN SYSTEM VIEWPORT -->
+        <main class="max-w-7xl mx-auto px-4 py-8 flex-grow w-full space-y-12">
+            
+            <!-- MASTER GRID STREAM COMPONENT -->
+            <div v-if="currentTab === 'all'" class="space-y-12">
+                
+                <!-- CATEGORY CHANNELS LOOPER -->
+                <div v-for="(headlines, category) in segmentedNews" :key="category" class="space-y-4">
+                    <!-- Section Title Pill -->
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                        <h3 class="text-lg font-black uppercase tracking-wider text-slate-900 flex items-center gap-2">
+                            <span class="w-3 h-3 rounded-xs rotate-45" :class="getCategoryThemeColor(category)"></span>
+                            {{ category }} Channel
+                        </h3>
+                        <span class="text-[10px] font-mono font-bold bg-white/80 border border-slate-200/60 px-2 py-0.5 rounded text-slate-500 shadow-2xs">
+                            3 Streams Active
+                        </span>
+                    </div>
 
-<div class="card">
-<h3>Deep Learning</h3>
-<p>
-Neural networks capable of image recognition, speech
-processing, and advanced prediction tasks.
-</p>
-</div>
+                    <!-- Clean Standardized 3-Headline Rows (Highly Organized Glassmorphic Cards) -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div v-for="item in headlines" :key="item.id" class="bg-white/60 border border-slate-200/80 hover:border-slate-400 hover:bg-white/90 hover:shadow-xl rounded-xl p-5 backdrop-blur-md transition-all duration-300 flex flex-col justify-between group">
+                            <div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-[9px] uppercase font-mono font-black text-slate-400 tracking-wider">
+                                        ID: #APX-0{{ item.id }}
+                                    </span>
+                                    <span class="text-[11px] font-mono text-sky-600 font-bold bg-sky-50 px-1.5 py-0.5 rounded">
+                                        <i class="fa-regular fa-clock mr-1 text-[10px]"></i>{{ item.time }}
+                                    </span>
+                                </div>
+                                <h4 class="font-bold text-slate-900 text-base leading-snug group-hover:text-sky-600 transition-colors duration-200 mb-2">
+                                    {{ item.title }}
+                                </h4>
+                                <p class="text-xs text-slate-600 leading-relaxed">
+                                    {{ item.summary }}
+                                </p>
+                            </div>
+                            <!-- Bottom Action Card Meta -->
+                            <div class="mt-5 pt-3 border-t border-slate-200/60 flex justify-between items-center text-[11px] font-mono">
+                                <span class="text-slate-500 font-semibold"><i class="fa-solid fa-rss mr-1 text-slate-300"></i>{{ item.source }}</span>
+                                <a href="#" class="text-sky-600 font-bold hover:underline flex items-center gap-0.5">
+                                    Expand Intel <i class="fa-solid fa-angle-right text-[9px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<div class="card">
-<h3>Generative AI</h3>
-<p>
-Systems such as ChatGPT and image generators that create
-new content from learned patterns.
-</p>
-</div>
+                <!-- LIVE WEATHER SENSORS MATRIX -->
+                <div class="bg-slate-900/90 text-slate-100 rounded-2xl p-6 shadow-xl space-y-6 border border-slate-800/80 backdrop-blur-md">
+                    <div class="flex items-center gap-2 border-b border-white/10 pb-3">
+                        <i class="fa-solid fa-cloud-sun-rain text-amber-400 text-lg"></i>
+                        <div>
+                            <h3 class="text-base font-black uppercase tracking-wider">Global Climate & Environmental Sensors</h3>
+                            <p class="text-[10px] text-slate-400 font-mono">Satellite reporting telemetry grids updated every 5 minutes</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-4 font-mono">
+                            <span class="text-slate-400 text-[10px] uppercase block">New Delhi, IN</span>
+                            <span class="text-xl font-black text-amber-400">38°C</span>
+                            <span class="text-[10px] block text-emerald-400 mt-1"><i class="fa-solid fa-wind mr-1"></i>Dust System Passing</span>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-4 font-mono">
+                            <span class="text-slate-400 text-[10px] uppercase block">London, UK</span>
+                            <span class="text-xl font-black text-sky-400">14°C</span>
+                            <span class="text-[10px] block text-sky-300 mt-1"><i class="fa-solid fa-droplet mr-1"></i>Light Rain Layers</span>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-4 font-mono">
+                            <span class="text-slate-400 text-[10px] uppercase block">New York, US</span>
+                            <span class="text-xl font-black text-indigo-300">22°C</span>
+                            <span class="text-[10px] block text-emerald-400 mt-1"><i class="fa-solid fa-circle-check mr-1"></i>Atmosphere Optimal</span>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-4 font-mono">
+                            <span class="text-slate-400 text-[10px] uppercase block">Tokyo, JP</span>
+                            <span class="text-xl font-black text-purple-400">19°C</span>
+                            <span class="text-[10px] block text-amber-400 mt-1"><i class="fa-solid fa-triangle-exclamation mr-1"></i>High Humidity Pulse</span>
+                        </div>
+                    </div>
+                </div>
 
-<div class="card">
-<h3>Data Analytics</h3>
-<p>
-Extracting valuable insights from structured and
-unstructured datasets.
-</p>
-</div>
+            </div>
 
-</div>
-</div>
-</section>
+            <!-- VIEW 2: VELOCITY METRIC SIMULATION ENGINE -->
+            <div v-if="currentTab === 'analytics'" class="grid md:grid-cols-3 gap-8">
+                <!-- Parameters Controls -->
+                <div class="md:col-span-2 bg-white/70 border border-slate-200 rounded-2xl p-6 space-y-6 shadow-xs backdrop-blur-md">
+                    <div>
+                        <h3 class="text-lg font-black text-slate-900">Interactive Story Virality Index Engine</h3>
+                        <p class="text-xs text-slate-500 mt-0.5">Simulate news propagation variables via synthetic consumer array modeling inputs.</p>
+                    </div>
 
-<section id="tools">
-<div class="container">
+                    <div class="space-y-6">
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-xs font-mono">
+                                <label class="font-semibold text-slate-700 uppercase tracking-wider"><i class="fa-regular fa-eye mr-1 text-sky-600"></i> Concurrent Impressions</label>
+                                <span class="text-sky-600 font-bold">{{ viralityParams.views.toLocaleString() }} readers</span>
+                            </div>
+                            <input type="range" min="1000" max="150000" step="1000" v-model.number="viralityParams.views" class="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-sky-500">
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-xs font-mono">
+                                <label class="font-semibold text-slate-700 uppercase tracking-wider"><i class="fa-solid fa-retweet mr-1 text-emerald-600"></i> Syndi-Shares / Minute</label>
+                                <span class="text-emerald-400 font-bold">{{ viralityParams.shares }} iterations</span>
+                            </div>
+                            <input type="range" min="5" max="2500" step="5" v-model.number="viralityParams.shares" class="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-500">
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-xs font-mono">
+                                <label class="font-semibold text-slate-700 uppercase tracking-wider"><i class="fa-solid fa-triangle-exclamation mr-1 text-amber-600"></i> Event Weight Rating</label>
+                                <span class="text-amber-600 font-bold">Multiplier Tier {{ viralityParams.severity }}x</span>
+                            </div>
+                            <input type="range" min="1.0" max="5.0" step="0.5" v-model.number="viralityParams.severity" class="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-amber-500">
+                        </div>
+                    </div>
+                </div>
 
-<h2 class="section-title">Popular Technologies</h2>
+                <!-- Calculation Output Box -->
+                <div class="bg-white/80 border border-slate-200 rounded-2xl p-6 flex flex-col justify-between items-center text-center shadow-lg relative overflow-hidden backdrop-blur-md">
+                    <div class="w-full">
+                        <h4 class="text-xs font-mono uppercase tracking-widest text-slate-400 mb-6">Computed Velocity Score</h4>
+                        
+                        <div class="relative w-44 h-44 mx-auto flex items-center justify-center mb-4">
+                            <div class="absolute inset-0 rounded-full border-[6px] border-slate-100"></div>
+                            <div class="absolute inset-0 rounded-full border-[6px] border-sky-500 border-t-transparent animate-spin" style="animation-duration: 3s;"></div>
+                            <div>
+                                <span class="text-5xl font-black font-mono tracking-tighter text-slate-900">{{ calculatedVirality }}</span>
+                                <span class="text-[10px] block font-mono text-slate-400 tracking-wider font-bold mt-1">VELOCITY COEFFICIENT</span>
+                            </div>
+                        </div>
+                        
+                        <p class="text-xs text-slate-700 font-medium mt-4">
+                            Status Cluster: <span class="text-sky-700 font-bold uppercase tracking-wider font-mono bg-sky-50 px-2 py-0.5 rounded">{{ viralityClassification }}</span>
+                        </p>
+                    </div>
 
-<div class="tools">
-<div class="tool">Python</div>
-<div class="tool">Pandas</div>
-<div class="tool">NumPy</div>
-<div class="tool">Scikit-Learn</div>
-<div class="tool">TensorFlow</div>
-<div class="tool">PyTorch</div>
-<div class="tool">Jupyter Notebook</div>
-<div class="tool">SQL</div>
-</div>
+                    <p class="text-[10px] font-mono text-slate-400 mt-6 border-t border-slate-100 pt-4 w-full">
+                        Formula applied: $\text{Score} = \left( \frac{\text{Impressions}}{25000} + \frac{\text{Shares}}{200} \right) \times \text{Severity}$
+                    </p>
+                </div>
+            </div>
 
-</div>
-</section>
+        </main>
 
-<section id="future">
-<div class="container">
+        <!-- FOOTER STATUS -->
+        <footer class="border-t border-slate-200/60 bg-white/60 backdrop-blur-md mt-auto py-4 text-center shadow-inner">
+            <p class="text-[10px] font-mono text-slate-400">© 2026 Apex News Network Inc. All streaming feeds architecturalized via active distributed layout nodes.</p>
+        </footer>
+    </div>
 
-<h2 class="section-title">Future of AI</h2>
+    <!-- Application Engine Logic -->
+    <script>
+        const { createApp } = Vue;
 
-<div class="about">
-<p>
-AI is transforming healthcare, finance, education,
-cybersecurity, transportation, and scientific research.
-As computing power and data availability continue to grow,
-AI systems will become increasingly capable of solving
-complex real-world problems and improving human productivity.
-</p>
-</div>
-
-</div>
-</section>
-
-<footer>
-    <p>
-        Project 4 - AI & Data Science Website | Created by Harshil Nair
-    </p>
-</footer>
-
+        createApp({
+            data() {
+                return {
+                    currentTab: 'all',
+                    viralityParams: {
+                        views: 65000,
+                        shares: 840,
+                        severity: 2.5
+                    },
+                    // Fully segmented structured data layers matrix
+                    segmentedNews: {
+                        "National": [
+                            { id: 101, time: "10m ago", title: "Infrastructure Initiative Speeds Up Multi-Modal Transport Corridor Overhauls", summary: "The federal planning department approved massive budget allocations to scale high-speed freight alignments and smart-city grid systems.", source: "National Wire Services" },
+                            { id: 102, time: "32m ago", title: "Renewable Integration Core Sets Clean Energy Production Record Peak", summary: "Solar thermal plants combined with offshore wind reserves covered over 44% of domestic industrial consumption demand streams this morning.", source: "EcoTech Matrix" },
+                            { id: 103, time: "1h ago", title: "Educational Transformation Guidelines Mandate Adaptive AI Integration Frameworks", summary: "New baseline structures set standard parameters for deploying machine learning dynamic assistance programs in central research universities.", source: "Academic Post" }
+                        ],
+                        "State": [
+                            { id: 201, time: "14m ago", title: "State High-Tech Capital Hub Greenlights 1500-Acre Special Airport Domain", summary: "Zoning commissions validated architectural clearance steps to construct an automated zero-emission transit facility within the tech belt boundary.", source: "Regional Monitor" },
+                            { id: 202, time: "50m ago", title: "Emergency Water Reservoir Framework Completed Amid Impending Weather System Shifts", summary: "Hydrological engineering corps constructed multi-tiered flood mitigation floodgates to protect farming communities ahead of schedule.", source: "State Hydro Desk" },
+                            { id: 203, time: "2h ago", title: "Coastal Tourism Modernization Grants Trigger Multi-Billion Port Re-developments", summary: "State treasury bills authorize targeted funding structures to completely digitize security checkpoints and clean ferry infrastructure arrays.", source: "Coastal Herald" }
+                        ],
+                        "Economics": [
+                            { id: 301, time: "5m ago", title: "Global Central Bank Cooperations Execute Inflation Stabilization Targets Safely", summary: "Joint fiscal declarations from leading financial structures lowered benchmark asset requirements, instantly strengthening currency purchasing power.", source: "Bourse Matrix" },
+                            { id: 302, time: "40m ago", title: "Maritime Trade Corridor Treaty Cuts Cargo Transit Fees Down by 15%", summary: "Strategic deep-water shipping lanes implement unified maritime tariff protocols, promising rapid drops in consumer goods shipping overheads.", source: "Global Logistics Journal" },
+                            { id: 303, time: "1h ago", title: "Sovereign Wealth Funds Rotate Records of Floating Capital Into Green Tech", summary: "Investment portfolios redirect capital pools into long-duration battery storage developments and hydrogen grid distribution networks.", source: "Macro Finance Pulse" }
+                        ],
+                        "Business": [
+                            { id: 401, time: "18m ago", title: "Logistics Conglomerate Scales Next-Gen Automated Electric Hauling Truck Fleet", summary: "Commercial transport entities deploy autonomous semi-truck lines across regional hubs, cutting down distribution operational times.", source: "Enterprise Wire" },
+                            { id: 402, time: "1h ago", title: "Tech Manufacturing Monolith Proposes Multi-Billion Foundry Cluster Expansion", summary: "Board directors finalized locations for an ultra-clean automated silicon substrate manufacturing plant targeting automotive supply needs.", source: "Silicon Times" },
+                            { id: 403, time: "3h ago", title: "Corporate Merger Activities Re-shape International Cloud Storage Sovereignty Tiers", summary: "Two leading database security companies consolidate infrastructure systems to challenge hyperscale provider dominance parameters.", source: "Merger Matrix" }
+                        ],
+                        "Political": [
+                            { id: 501, time: "12m ago", title: "UK Administration Shock: PM Keir Starmer Resigns Amid Policy Deadlocks", summary: "Downing Street confirmed the Prime Minister stepped down following intense negotiation blockades inside parliament over urgent structural adjustments.", source: "London Intel Office" },
+                            { id: 502, time: "45m ago", title: "FATF Plenary Meetings Conclude Structural Monitoring Framework Adjustments", summary: "Anti-money laundering groups update strategic international tracking statuses under active Mexican delegation guidelines this quarter.", source: "Global Watch Agency" },
+                            { id: 503, time: "2h ago", title: "Trade Agreement Commissions Ratify Multilateral Tech Infrastructure Protection Treaties", summary: "Diplomatic bodies sign strategic digital framework compacts to safely standardize international algorithmic source audit safeguards.", source: "Diplomacy Core" }
+                        ],
+                        "Sports": [
+                            { id: 601, time: "25m ago", title: "Championship Underdogs Secure Thrilling Knockout Slot Victory Sequence", summary: "An intense injury-time overhead score secured a decisive victory, altering standard progression tables going into the quarterfinal stages.", source: "Sportsnet Core" },
+                            { id: 602, time: "1h ago", title: "Global Athletics Committee Announces Multi-City Clean Track Innovations", summary: "New technological track-surface compound criteria will be implemented globally to improve runner balance metrics and joint impact safety.", source: "Athletic Arena" },
+                            { id: 603, time: "4h ago", title: "International Racing Series Switches to 100% Synthetic Renewable Fuels Next Term", summary: "Motorsport regulations codify strict transitions to entirely bio-engineered emission-free fuels, driving automotive production R&D cycles.", source: "Velocity Press" }
+                        ]
+                    }
+                }
+            },
+            computed: {
+                calculatedVirality() {
+                    const score = ((this.viralityParams.views / 25000) + (this.viralityParams.shares / 200)) * this.viralityParams.severity;
+                    return Math.min(Math.max(score, 0.1), 99.9).toFixed(1);
+                },
+                viralityClassification() {
+                    const val = parseFloat(this.calculatedVirality);
+                    if (val >= 40.0) return "🔥 Hyper-Viral Cascade";
+                    if (val >= 20.0) return "📈 High Velocity Surge";
+                    if (val >= 8.0) return "⚡ Standard Propagation";
+                    return "💤 Low Engagement Stasis";
+                }
+            },
+            methods: {
+                getCategoryThemeColor(category) {
+                    switch (category.toLowerCase()) {
+                        case 'national': return 'bg-amber-500';
+                        case 'state': return 'bg-rose-500';
+                        case 'economics': return 'bg-emerald-500';
+                        case 'business': return 'bg-indigo-500';
+                        case 'political': return 'bg-purple-500';
+                        case 'sports': return 'bg-sky-500';
+                        default: return 'bg-slate-400';
+                    }
+                }
+            }
+        }).mount('#app')
+    </script>
 </body>
 </html>
