@@ -1,14 +1,25 @@
 # News Agent
 
 ## Objective
-Collect top news headlines and send the top 5 news items to WhatsApp.
+
+Automatically collect the latest news headlines and send the top 5 headlines to WhatsApp every morning.
 
 ## Technologies Used
-- Python
-- News API
-- WhatsApp Web
 
-## Features
-- Fetches latest news
-- Selects top 5 headlines
-- Can be integrated with WhatsApp automation
+- Python
+- NewsAPI
+- WhatsApp Automation
+- Requests Library
+
+## Workflow
+
+1. Fetch latest news
+2. Extract top 5 headlines
+3. Format message
+4. Send to WhatsApp
+
+## Future Improvements
+
+- AI-based news summarization
+- Personalized categories
+- Daily scheduling
