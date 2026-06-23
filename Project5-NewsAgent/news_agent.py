@@ -1,4 +1,5 @@
 import requests
+from datetime import datetime
 
 API_KEY = "YOUR_NEWSAPI_KEY"
 
@@ -8,8 +9,9 @@ response = requests.get(url)
 
 data = response.json()
 
-print("TOP 5 NEWS HEADLINES")
-print("-" * 40)
+message = f"Top 5 News Headlines ({datetime.now().strftime('%d-%m-%Y')})\n\n"
 
 for i, article in enumerate(data["articles"][:5], start=1):
-    print(f"{i}. {article['title']}")
+    message += f"{i}. {article['title']}\n\n"
+
+print(message)
