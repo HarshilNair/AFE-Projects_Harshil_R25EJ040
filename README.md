@@ -15,6 +15,9 @@
 
 This repository contains five projects developed as part of the Applied Foundations of Engineering (AFE) coursework.
 
+Link for Overview:
+https://harshilnair.github.io/AFE-Projects_Harshil_R25EJ040/
+
 ---
 
 ## Project 1 - GitHub Repository & Code Commit
