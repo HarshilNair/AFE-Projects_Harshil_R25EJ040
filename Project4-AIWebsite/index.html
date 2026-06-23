@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI & Data Science Hub</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+    color:#333;
+}
+
+header{
+    background:linear-gradient(135deg,#0f172a,#2563eb);
+    color:white;
+    text-align:center;
+    padding:80px 20px;
+}
+
+header h1{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+header p{
+    font-size:1.2rem;
+    max-width:800px;
+    margin:auto;
+}
+
+nav{
+    background:white;
+    text-align:center;
+    padding:15px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav a{
+    text-decoration:none;
+    color:#2563eb;
+    margin:0 20px;
+    font-weight:bold;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+section{
+    padding:60px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+    color:#2563eb;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    color:#2563eb;
+    margin-bottom:10px;
+}
+
+.about{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.tools{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+
+.tool{
+    background:#2563eb;
+    color:white;
+    padding:12px 20px;
+    border-radius:30px;
+}
+
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>AI & Data Science Hub</h1>
+    <p>
+        Exploring Artificial Intelligence, Machine Learning,
+        Data Analytics, and the technologies shaping the future.
+    </p>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#domains">Domains</a>
+    <a href="#tools">Tools</a>
+    <a href="#future">Future</a>
+</nav>
+
+<section id="about">
+<div class="container">
+    <h2 class="section-title">About Artificial Intelligence</h2>
+
+    <div class="about">
+        <p>
+            Artificial Intelligence (AI) is a branch of computer science
+            focused on building systems capable of performing tasks that
+            typically require human intelligence. These systems can learn
+            from data, recognize patterns, make decisions, and continuously
+            improve their performance.
+        </p>
+    </div>
+</div>
+</section>
+
+<section id="domains">
+<div class="container">
+
+<h2 class="section-title">Key Domains</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Machine Learning</h3>
+<p>
+Algorithms that learn from data and improve performance
+without explicit programming.
+</p>
+</div>
+
+<div class="card">
+<h3>Deep Learning</h3>
+<p>
+Neural networks capable of image recognition, speech
+processing, and advanced prediction tasks.
+</p>
+</div>
+
+<div class="card">
+<h3>Generative AI</h3>
+<p>
+Systems such as ChatGPT and image generators that create
+new content from learned patterns.
+</p>
+</div>
+
+<div class="card">
+<h3>Data Analytics</h3>
+<p>
+Extracting valuable insights from structured and
+unstructured datasets.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="tools">
+<div class="container">
+
+<h2 class="section-title">Popular Technologies</h2>
+
+<div class="tools">
+<div class="tool">Python</div>
+<div class="tool">Pandas</div>
+<div class="tool">NumPy</div>
+<div class="tool">Scikit-Learn</div>
+<div class="tool">TensorFlow</div>
+<div class="tool">PyTorch</div>
+<div class="tool">Jupyter Notebook</div>
+<div class="tool">SQL</div>
+</div>
+
+</div>
+</section>
+
+<section id="future">
+<div class="container">
+
+<h2 class="section-title">Future of AI</h2>
+
+<div class="about">
+<p>
+AI is transforming healthcare, finance, education,
+cybersecurity, transportation, and scientific research.
+As computing power and data availability continue to grow,
+AI systems will become increasingly capable of solving
+complex real-world problems and improving human productivity.
+</p>
+</div>
+
+</div>
+</section>
+
+<footer>
+    <p>
+        Project 4 - AI & Data Science Website | Created by Harshil Nair
+    </p>
+</footer>
+
+</body>
+</html>
