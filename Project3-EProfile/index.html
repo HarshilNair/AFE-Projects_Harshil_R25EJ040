@@ -1,63 +1,288 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Harshil Nair - Data Science & AI Enthusiast</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Harshil Nair | Data Science & AI Portfolio</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f5f7fb;
+    color:#333;
+}
+
+header{
+    background:linear-gradient(135deg,#0f172a,#1e40af);
+    color:white;
+    text-align:center;
+    padding:100px 20px;
+}
+
+header h1{
+    font-size:3.5rem;
+    margin-bottom:15px;
+}
+
+header p{
+    font-size:1.2rem;
+    opacity:0.9;
+}
+
+nav{
+    background:white;
+    padding:15px;
+    text-align:center;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    position:sticky;
+    top:0;
+}
+
+nav a{
+    text-decoration:none;
+    color:#1e40af;
+    margin:0 20px;
+    font-weight:bold;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+section{
+    padding:70px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+    color:#1e40af;
+    font-size:2rem;
+}
+
+.about{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    color:#1e40af;
+    margin-bottom:10px;
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+
+.skill{
+    background:#1e40af;
+    color:white;
+    padding:12px 20px;
+    border-radius:30px;
+}
+
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+.highlight{
+    color:#60a5fa;
+}
+
+</style>
 </head>
+
 <body>
 
-    <h1>Harshil Nair</h1>
+<header>
 
-    <h2>Student Profile</h2>
+<h1>Harshil Nair</h1>
 
-    <p>
-        B.Tech Computer Science and Information Technology Student
-        at REVA University, Bengaluru.
-    </p>
+<p>
+Data Science & AI Enthusiast | B.Tech CSIT Student
+</p>
 
-    <h2>Skills</h2>
+</header>
 
-    <ul>
-        <li>Python Programming</li>
-        <li>Data Science</li>
-        <li>Artificial Intelligence</li>
-        <li>Machine Learning</li>
-        <li>Data Analytics</li>
-        <li>Git & GitHub</li>
-        <li>Web Development</li>
-    </ul>
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#goals">Goals</a>
+<a href="#contact">Contact</a>
+</nav>
 
-    <h2>Projects</h2>
+<section id="about">
 
-    <ul>
-        <li>Hello World Python Project</li>
-        <li>Hugging Face Model Analysis</li>
-        <li>E-Profile Website</li>
-    </ul>
+<div class="container">
 
-    <h2>Education</h2>
+<h2 class="section-title">About Me</h2>
 
-    <p>
-        B.Tech in Computer Science and Information Technology<br>
-        REVA University, Bengaluru
-    </p>
+<div class="about">
 
-    <h2>Career Goal</h2>
+<p>
 
-    <p>
-        To become a Data Scientist and AI Engineer, building
-        intelligent systems that solve real-world problems using
-        Machine Learning, Data Analytics, and Artificial Intelligence.
-    </p>
+I am <strong>Harshil Nair</strong>, a B.Tech Computer Science and Information Technology student at REVA University.
 
-    <h2>Interests</h2>
+My interests include <span class="highlight">Artificial Intelligence, Machine Learning, Data Science, Data Analytics, and Software Development.</span>
 
-    <ul>
-        <li>Artificial Intelligence</li>
-        <li>Machine Learning</li>
-        <li>Deep Learning</li>
-        <li>Generative AI</li>
-        <li>Data Visualization</li>
-    </ul>
+I am continuously learning modern technologies and building projects that improve my technical skills and problem-solving abilities.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<div class="container">
+
+<h2 class="section-title">Technical Skills</h2>
+
+<div class="skills">
+
+<div class="skill">Python</div>
+<div class="skill">Data Science</div>
+<div class="skill">Machine Learning</div>
+<div class="skill">Artificial Intelligence</div>
+<div class="skill">Data Analytics</div>
+<div class="skill">GitHub</div>
+<div class="skill">HTML</div>
+<div class="skill">Web Development</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<div class="container">
+
+<h2 class="section-title">Projects</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>GitHub Repository Project</h3>
+<p>
+Created and managed projects using GitHub repositories and version control.
+</p>
+</div>
+
+<div class="card">
+<h3>Hugging Face Model Analysis</h3>
+<p>
+Analyzed a trending AI model and documented its architecture, datasets, and use cases.
+</p>
+</div>
+
+<div class="card">
+<h3>E-Profile Website</h3>
+<p>
+Designed and deployed a professional portfolio website using GitHub Pages.
+</p>
+</div>
+
+<div class="card">
+<h3>AI & Data Science Website</h3>
+<p>
+Developed a modern website showcasing AI technologies and applications.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="goals">
+
+<div class="container">
+
+<h2 class="section-title">Career Goals</h2>
+
+<div class="about">
+
+<p>
+
+My goal is to become a highly skilled <strong>Data Scientist and AI Engineer</strong> capable of building intelligent systems that solve real-world problems using Machine Learning, Artificial Intelligence, and Data Analytics.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<div class="container">
+
+<h2 class="section-title">Contact</h2>
+
+<div class="about">
+
+<p><strong>Name:</strong> Harshil Nair</p>
+<p><strong>University:</strong> REVA University</p>
+<p><strong>Program:</strong> B.Tech CSIT</p>
+<p><strong>GitHub:</strong> github.com/HarshilNair</p>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 Harshil Nair | Data Science & AI Portfolio
+</p>
+
+</footer>
 
 </body>
 </html>
